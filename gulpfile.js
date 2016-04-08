@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+var plumber = require('gulp-plumber')
 var rename = require('gulp-rename')
 var image = require('gulp-image')
 var imageResize = require('gulp-image-resize')
@@ -49,6 +50,7 @@ gulp.task('imagemin:resize', function (cb) {
       resize_settings.height = type.height
     }
     gulp.src(imageOptimConfig.paths.src + imageOptimConfig.paths.folder + type.folder + '/**/*.{png,jpg}')
+      .pipe(plumber())
       // @2xにリネームするか
       .pipe(rename(function (path) { path.basename += '@2x' }))
       // 倍解像度を一旦コピー
