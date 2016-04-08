@@ -43,7 +43,8 @@ gulp.task('imagemin:resize', function (cb) {
     var resize_settings = {
       width: type.width,
       crop: type.crop,
-      upscale: false
+      upscale: false,
+      imageMagick: true
     }
     // heightの指定があれば使用する
     if (type.height) {
