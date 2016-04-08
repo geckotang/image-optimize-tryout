@@ -1,8 +1,8 @@
 ## Requirement
 
-- Graphicsmagickがインストールされている必要があります
-- osxであれば `brew install graphicsmagick` でインストールができます
-- ubuntuであれば `apt-get install graphicsmagick` でインストールができます
+- ImageMagickがインストールされている必要があります
+- osxであれば `brew install imagemagick` でインストールができます
+- ubuntuであれば `apt-get install imagemagick` でインストールができます
 
 ## How to use
 
