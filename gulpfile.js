@@ -2,7 +2,7 @@ var gulp = require('gulp')
 var rename = require('gulp-rename')
 var image = require('gulp-image')
 var imageResize = require('gulp-image-resize')
-var imageminWebp = require('imagemin-webp')
+var webp = require('gulp-webp')
 var runSequence = require('run-sequence')
 
 var imageOptimConfig = {
@@ -30,7 +30,7 @@ var imageFolderNames = imageOptimConfig.resizeRule.map(function (v) { return v.f
 gulp.task('imagemin:webp', function () {
   return gulp.src('./build/images/{' + imageFolderNames + '}/*.{png,jpg}')
     // webp化する
-    .pipe(imageminWebp({quality: 70})())
+    .pipe(webp({quality: 70}))
     // webp化したものを配置する
     .pipe(gulp.dest('./build/images'))
 })
